@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Container, Segment, Message, Dimmer, Loader, Image, Header, Icon, Divider } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { readAlbum } from '../actions/album';
 
-import Content from '../components/album/Content';
+import Page from '../components/Page';
+// import Photos from '../components/album/Photos';
+import mediaParagraph from '../assets/img/media-paragraph.png';
 
 class Album extends Component {
 
@@ -16,12 +19,38 @@ class Album extends Component {
   }
   
   render() {
-    const albumReducer = this.props.albumReducer;
+    const { album, isError, isLoading } = this.props.albumReducer;
 
     return (
-      <div>
-        <Content albumReducer={albumReducer} />
-      </div>
+      <Page id="album" title="Album" description='This album page'>
+        <Container>
+          <Segment>
+          {isError? (
+              <Message negative>
+                <Message.Header>Oops.. Something Wrong!</Message.Header>
+                <p>Please Try Again Reload Page</p>
+              </Message>
+            ): isLoading? (
+              <Segment>
+                <Dimmer active inverted>
+                  <Loader inverted content='Loading' />
+                </Dimmer>
+
+                <Image src={mediaParagraph} />
+              </Segment>
+            ):(
+              <div>
+                <Header as='h2' icon textAlign='center'>
+                  <Icon name='images' circular />
+                  <Header.Content>{album.title}</Header.Content>
+                </Header>
+                <Divider inverted />
+                {/* <Photos photos={album.photos} /> */}
+              </div>
+            )}
+          </Segment>
+        </Container>
+      </Page>
     )
   }
 }

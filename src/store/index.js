@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
-import { createBrowserHistory, createMemoryHistory } from 'history';
 import logger from 'redux-logger';
 import promiseMiddleware from 'redux-promise-middleware';
+import { createBrowserHistory, createMemoryHistory } from 'history';
 
 import rootReducers from '../reducers';
 
@@ -32,7 +32,7 @@ export default (url = '/') => {
     }
   }
 
-  const middleware = [logger, routerMiddleware(history), promiseMiddleware()];
+  const middleware = process.env.NODE_ENV === 'development' ? [logger, routerMiddleware(history), promiseMiddleware()] : [promiseMiddleware(), routerMiddleware(history)];
   const composedEnhancers = compose(
     applyMiddleware(...middleware),
     ...enhancers

@@ -81,7 +81,7 @@ export default class Footer extends Component {
   render() {
 
     return (
-      <div>
+      <div id="footer">
         <Responsive {...Responsive.onlyMobile}>
           <Segment className='footer-mobile' inverted>
             <Divider inverted/>
@@ -132,7 +132,7 @@ export default class Footer extends Component {
               <Grid.Row columns={4}>
                 <Grid.Column>
                   <Segment inverted>
-                    <Header as='h3' inverted>Simple Website</Header>
+                    <Header as='h2' inverted>Simple Website</Header>
                     <Divider inverted/>
                     <Item.Group link>
                       {simplewebs.map((sw, index) => (
@@ -149,7 +149,7 @@ export default class Footer extends Component {
                 </Grid.Column>
                 <Grid.Column>
                   <Segment inverted>
-                    <Header as='h3' inverted>Help</Header>
+                    <Header as='h2' inverted>Help</Header>
                     <Divider inverted/>
                     <Item.Group link>
                       {helps.map((help, index) => (
@@ -166,7 +166,7 @@ export default class Footer extends Component {
                 </Grid.Column>
                 <Grid.Column>
                   <Segment inverted>
-                    <Header as='h3' inverted>Follow Me</Header>
+                    <Header as='h2' inverted>Follow Me</Header>
                     <Divider inverted/>
                     <Item.Group link>
                       {sosmeds.map((sosmed, index) => (
@@ -184,7 +184,7 @@ export default class Footer extends Component {
                 </Grid.Column>
                 <Grid.Column>
                   <Segment inverted>
-                    <Header as='h3' inverted>Payments</Header>
+                    <Header as='h2' inverted>Payments</Header>
                     <Divider inverted/>
                     <Grid columns={4}>
                       {payments.map((payment, index) => (

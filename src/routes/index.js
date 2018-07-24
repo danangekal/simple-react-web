@@ -2,88 +2,80 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
-// import AuthenticatedRoute from '../components/authenticated-route';
-// import UnauthenticatedRoute from '../components/unauthenticated-route';
 import Notfound from '../components/Notfound';
 import Loading from '../components/Loading';
 
 const Home = Loadable({
-  loader: () => import('../containers/Home'),
-  loading: () => <Loading/>
+  loader: () => import(/* webpackChunkName: "home" */ '../containers/Home'),
+  loading: () => <Loading />,
+  modules: ['home']
 });
 
 const Explore = Loadable({
-  loader: () => import('../containers/Explore'),
-  loading: () => <Loading/>
+  loader: () => import(/* webpackChunkName: "explore" */ '../containers/Explore'),
+  loading: () => <Loading />,
+  modules: ['explore']
 });
 
 const Friend = Loadable({
-  loader: () => import('../containers/Friend'),
-  loading: () => <Loading/>
+  loader: () => import(/* webpackChunkName: "friend" */ '../containers/Friend'),
+  loading: () => <Loading />,
+  modules: ['friend']
 });
 
 const Register = Loadable({
-  loader: () => import('../containers/Register'),
-  loading: () =>  <Loading/>
+  loader: () => import(/* webpackChunkName: "register" */ '../containers/Register'),
+  loading: () => <Loading />,
+  modules: ['register']
 });
 
 const About = Loadable({
-  loader: () => import('../containers/About'),
-  loading: () =>  <Loading/>
+  loader: () => import(/* webpackChunkName: "about" */ '../containers/About'),
+  loading: () => <Loading />,
+  modules: ['about']
 });
 
 const Careers = Loadable({
-  loader: () => import('../containers/Careers'),
-  loading: () =>  <Loading/>
+  loader: () => import(/* webpackChunkName: "careers" */ '../containers/Careers'),
+  loading: () => <Loading />,
+  modules: ['careers']
 });
 
 const Partnerships = Loadable({
-  loader: () => import('../containers/Partnerships'),
-  loading: () =>  <Loading/>
+  loader: () => import(/* webpackChunkName: "partnerships" */ '../containers/Partnerships'),
+  loading: () => <Loading />,
+  modules: ['partnerships']
 });
 
 const Terms = Loadable({
-  loader: () => import('../containers/Terms'),
-  loading: () =>  <Loading/>
+  loader: () => import(/* webpackChunkName: "terms" */ '../containers/Terms'),
+  loading: () => <Loading />,
+  modules: ['terms']
 });
 
 const Privacy = Loadable({
-  loader: () => import('../containers/Privacy'),
-  loading: () =>  <Loading/>
+  loader: () => import(/* webpackChunkName: "privacy" */ '../containers/Privacy'),
+  loading: () => <Loading />,
+  modules: ['privacy']
 });
 
 const Contact = Loadable({
-  loader: () => import('../containers/Contact'),
-  loading: () =>  <Loading/>
+  loader: () => import(/* webpackChunkName: "contact" */ '../containers/Contact'),
+  loading: () => <Loading />,
+  modules: ['contact']
 });
 
 const Post = Loadable({
-  loader: () => import('../containers/Post'),
-  loading: () =>  <Loading/>
+  loader: () => import(/* webpackChunkName: "post" */ '../containers/Post'),
+  loading: () => <Loading />,
+  modules: ['post']
 });
 
-// const Album = Loadable({
-//   loader: () => import('../containers/Album'),
-//   loading: () =>  <Loading/>
-// });
-
-// const Dashboard = Loadable({
-//   loader: () => import(/* webpackChunkName: "dashboard" */ './dashboard'),
-//   loading: () => null,
-//   modules: ['dashboard']
-// });
-
-// const Login = Loadable({
-//   loader: () => import(/* webpackChunkName: "login" */ './login'),
-//   loading: () => null,
-//   modules: ['login']
-// });
-
-// const Logout = Loadable({
-//   loader: () => import(/* webpackChunkName: "logout" */ './logout'),
-//   loading: () => null,
-//   modules: ['logout']
-// });
+const Album = Loadable({
+  loader: () => import(/* webpackChunkName: "album" */ '../containers/Album'),
+  loading: () => <Loading />,
+  modules: ['album']
+});
 
 export default () => (
   <Switch>
@@ -99,12 +91,7 @@ export default () => (
     <Route exact path="/contact-us" component={Contact} />
 
     <Route exact path="/posts/:id" component={Post} />
-    {/* <Route exact path="/albums/:id" component={Album} /> */}
-
-    {/* <AuthenticatedRoute exact path="/dashboard" component={Dashboard} />
-
-    <UnauthenticatedRoute exact path="/login" component={Login} />
-    <AuthenticatedRoute exact path="/logout" component={Logout} /> */}
+    <Route exact path="/albums/:id" component={Album} />
 
     <Route component={Notfound} />
   </Switch>

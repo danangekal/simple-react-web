@@ -13,11 +13,11 @@ import Loadable from 'react-loadable';
 
 // Our store, entrypoint, and manifest
 import createStore from '../src/store';
-import App from '../src/app/app';
+import App from '../src/App';
 import manifest from '../build/asset-manifest.json';
 
 // Some optional Redux functions related to user authentication
-import { setCurrentUser, logoutUser } from '../src/modules/auth';
+// import { setCurrentUser, logoutUser } from '../src/modules/auth';
 
 // LOADER
 export default (req, res) => {
@@ -58,11 +58,11 @@ export default (req, res) => {
 
       // If the user has a cookie (i.e. they're signed in) - set them as the current user
       // Otherwise, we want to set the current state to be logged out, just in case this isn't the default
-      if ('mywebsite' in req.cookies) {
-        store.dispatch(setCurrentUser(req.cookies.mywebsite));
-      } else {
-        store.dispatch(logoutUser());
-      }
+      // if ('mywebsite' in req.cookies) {
+      //   store.dispatch(setCurrentUser(req.cookies.mywebsite));
+      // } else {
+      //   store.dispatch(logoutUser());
+      // }
 
       const context = {};
       const modules = [];
@@ -120,7 +120,7 @@ export default (req, res) => {
 
           // NOTE: Disable if you desire
           // Let's output the title, just to see SSR is working as intended
-          console.log('THE TITLE', helmet.title.toString());
+          console.log('TITLE', helmet.title.toString());
 
           // Pass all this nonsense into our HTML formatting function above
           const html = injectHTML(htmlData, {

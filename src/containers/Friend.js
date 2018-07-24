@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import { filterFriends } from '../actions/friend';
 
+import Page from '../components/Page';
 import User from '../components/friend/User';
 import paragraph from '../assets/img/paragraph.png';
 
@@ -21,7 +22,7 @@ class Friend extends Component {
     const { friends, isError, isLoading } = this.props.friendReducer;
 
     return (
-      <div>
+      <Page id="friend" title="Friend" description="This is friend page">
         <Container>
           <Segment>
           {isError? (
@@ -49,7 +50,7 @@ class Friend extends Component {
             )}
           </Segment>
         </Container>
-      </div>
+      </Page>
     )
   }
 }

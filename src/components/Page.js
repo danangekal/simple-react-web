@@ -6,15 +6,15 @@ import imageDefault from '../assets/img/image.png';
 const SITE_URL =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
-    : 'https://cra-ssr.herokuapp.com';
+    : 'https://simple-web-react.herokuapp.com';
 
 const FACEBOOK_APP_ID = 'XXXXXXXXX';
 
-const defaultTitle = 'Simple Website';
+const defaultTitle = 'Simple Website React';
 const defaultDescription =
   'This is a really simple website and cool.';
 const defaultImage = `${SITE_URL}${imageDefault}`;
-const defaultTwitter = '';
+const defaultTwitter = '@danang-ekal';
 const defaultSep = ' | ';
 
 class Page extends Component {

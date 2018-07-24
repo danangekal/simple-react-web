@@ -7,11 +7,9 @@ export default class Register extends Component {
   
   render() {
     return (
-      <div>
-        <Page title="Partnerships" description='This partnerships page'>
-          <Content/>
-        </Page>
-      </div>
+      <Page id="partnerships" title="Partnerships" description='This partnerships page'>
+        <Content/>
+      </Page>
     )
   }
 }

@@ -2,13 +2,12 @@
   "name": "simple-react-web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://simple-web-react.herokuapp.com",
   "dependencies": {
     "axios": "^0.18.0",
     "connected-react-router": "^4.3.0",
     "cookie-parser": "^1.4.3",
-    "font-awesome": "^4.7.0",
     "forcedomain": "^1.0.0",
-    "gh-pages": "^1.2.0",
     "ignore-styles": "^5.0.1",
     "js-cookie": "^2.2.0",
     "md5-file": "^4.0.0",
@@ -30,10 +29,10 @@
     "validatorjs": "^3.14.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts build && NODE_ENV=production node ./server/index.js",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "serve": "NODE_ENV=production node ./server/index.js"
+    "eject": "react-scripts eject"
   }
 }

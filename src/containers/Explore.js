@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import { filterExplores } from '../actions/explore';
 
+import Page from '../components/Page';
 import Album from '../components/explore/Album';
 import paragraph from '../assets/img/paragraph.png';
 
@@ -21,7 +22,7 @@ class Explore extends Component {
     const { explores, isError, isLoading } = this.props.exploreReducer;
 
     return (
-      <div>
+      <Page id="explore" title="Explore" description="This is explore page">
         <Container>
           <Segment>
           {isError? (
@@ -49,7 +50,7 @@ class Explore extends Component {
             )}
           </Segment>
         </Container>
-      </div>
+      </Page>
     )
   }
 }

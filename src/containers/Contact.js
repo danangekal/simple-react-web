@@ -7,11 +7,9 @@ export default class Contact extends Component {
   
   render() {
     return (
-      <div>
-        <Page title="Contact Us" description='This contact us page'>
-          <Content/>
-        </Page>
-      </div>
+      <Page id="contact" title="Contact Us" description='This contact us page'>
+        <Content/>
+      </Page>
     )
   }
 }

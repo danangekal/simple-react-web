@@ -19,6 +19,14 @@ const menuPrimary = [
   {
     to: '/friend',
     text: 'Friend'
+  },
+  {
+    to: '/about-us',
+    text: 'About Us'
+  },
+  {
+    to: '/contact-us',
+    text: 'Contact Us'
   }
 ];
 
@@ -42,7 +50,7 @@ const NavbarLink = ({ to, text, current }) => (
 
 export default ({ isAuthenticated, current, visible, handlePusher, handleToggle, context, contents, footers }) => (
   <div>
-    <Responsive {...Responsive.onlyMobile}>
+    <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
       <Sidebar.Pushable>
         <Sidebar
           as={Menu}
@@ -76,7 +84,7 @@ export default ({ isAuthenticated, current, visible, handlePusher, handleToggle,
           <Sticky context={context}>
             <Menu className='menu-mobile' color='grey' inverted>
               <Menu.Item>
-                <Image size="mini" src={logo} />
+                <Image src={logo} size='mini' />
               </Menu.Item>
               <Menu.Item onClick={handleToggle}>
                 <Icon name="sidebar" />

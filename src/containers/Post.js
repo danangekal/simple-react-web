@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 import { readPost, createComment } from '../actions/post';
 
+import Page from '../components/Page';
 // import Comments from '../components/post/Comments';
 import mediaParagraph from '../assets/img/media-paragraph.png';
 import matthew from '../assets/img/matthew.png';
@@ -42,7 +43,7 @@ class Post extends Component {
     const { post, isError, isLoading } = this.props.postReducer;
 
     return (
-      <div>
+      <Page id="post" title="Post" description='This post page'>
         <Container>
           <Segment>
           {isError? (
@@ -85,7 +86,7 @@ class Post extends Component {
             )}
           </Segment>
         </Container>
-      </div>
+      </Page>
     )
   }
 }

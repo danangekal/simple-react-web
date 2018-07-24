@@ -42,37 +42,35 @@ class Home extends Component {
     const { posts, isError, isLoading } = this.props.homeReducer;
     
     return (
-      <div>
-        <Page title="Home" description="This is home page">
-          <Container>
-            <Segment>
-              {isError? (
-                <Message negative>
-                  <Message.Header>Oops.. Something Wrong!</Message.Header>
-                  <p>Please Try Again Reload Page</p>
-                </Message>
-              ): isLoading? (
-                <Segment>
-                  <Dimmer active inverted>
-                    <Loader inverted content='Loading' />
-                  </Dimmer>
+      <Page id="home" title="Home" description="This is home page">
+        <Container>
+          <Segment>
+            {isError? (
+              <Message negative>
+                <Message.Header>Oops.. Something Wrong!</Message.Header>
+                <p>Please Try Again Reload Page</p>
+              </Message>
+            ): isLoading? (
+              <Segment>
+                <Dimmer active inverted>
+                  <Loader inverted content='Loading' />
+                </Dimmer>
 
-                  <Image src={paragraph} />
-                </Segment>
-              ):(
-                <div>
-                  <Header as='h2' icon textAlign='center'>
-                    <Icon name='newspaper outline' circular />
-                    <Header.Content>News</Header.Content>
-                  </Header>
-                  <Divider inverted />
-                  <Post onSubmit={this.handleSubmit} posts={posts} />
-                </div>
-              )}
-            </Segment>
-          </Container>
-        </Page>
-      </div>
+                <Image src={paragraph} />
+              </Segment>
+            ):(
+              <div>
+                <Header as='h2' icon textAlign='center'>
+                  <Icon name='newspaper outline' circular />
+                  <Header.Content>News</Header.Content>
+                </Header>
+                <Divider inverted />
+                <Post onSubmit={this.handleSubmit} posts={posts} />
+              </div>
+            )}
+          </Segment>
+        </Container>
+      </Page>
     )
   }
 }

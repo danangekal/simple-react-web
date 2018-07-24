@@ -5,13 +5,12 @@ import Loadable from 'react-loadable';
 import { Frontload } from 'react-frontload';
 import { ConnectedRouter } from 'connected-react-router';
 
-import './index.css';
-import App from './App';
 import createStore from './store';
 import registerServiceWorker from './registerServiceWorker';
+import App from './App';
 
+import './index.css';
 import 'semantic-ui-css/semantic.min.css';
-import 'font-awesome/css/font-awesome.min.css';
 
 // Create a store and get back itself and its history object
 const { store, history } = createStore();
