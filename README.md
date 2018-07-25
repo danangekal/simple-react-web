@@ -1,9 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-This project was inspired by awesome [Sosial Media](https://github.com/danangekal/sosial-media) and [CRA](https://github.com/cereallarceny/cra-ssr)
-
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
+This project was inspired by awesome [Sosial Media](https://github.com/danangekal/sosial-media) and [CRA-SSR](https://github.com/cereallarceny/cra-ssr)
+
 
 ## Table of Contents
 - [Features](#features)
@@ -36,6 +37,11 @@ yarn dev
 ### Run build:
 ```
 yarn build
+```
+
+### Run serve:
+```
+yarn serve
 ```
 
 ### Run test:
