@@ -77,6 +77,18 @@ const Album = Loadable({
   modules: ['album']
 });
 
+const Photo = Loadable({
+  loader: () => import(/* webpackChunkName: "photo" */ '../containers/Photo'),
+  loading: () => <Loading />,
+  modules: ['photo']
+});
+
+const Profile = Loadable({
+  loader: () => import(/* webpackChunkName: "profile" */ '../containers/Profile'),
+  loading: () => <Loading />,
+  modules: ['profile']
+});
+
 export default () => (
   <Switch>
     <Route exact path="/" component={Home} />
@@ -92,6 +104,8 @@ export default () => (
 
     <Route exact path="/posts/:id" component={Post} />
     <Route exact path="/albums/:id" component={Album} />
+    <Route exact path="/photos/:id" component={Photo} />
+    <Route path='/profile/:id' component={Profile} />
 
     <Route component={Notfound} />
   </Switch>
