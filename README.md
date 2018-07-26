@@ -9,6 +9,7 @@ This project was inspired by awesome [Sosial Media](https://github.com/danangeka
 ## Table of Contents
 - [Features](#features)
 - [Quick Start](#quick-start)
+- [License](#license)
 
 ## Features
 - Simpel project React with custom CRA (Create React App) and SSR (Server Side Rendering)
@@ -29,7 +30,7 @@ yarn install
 yarn start
 ```
 
-### Run dev:
+### Run dev (no SSR):
 ```
 yarn dev
 ```
@@ -39,7 +40,7 @@ yarn dev
 yarn build
 ```
 
-### Run serve:
+### Run serve (serve with SSR):
 ```
 yarn serve
 ```
@@ -48,3 +49,6 @@ yarn serve
 ```
 yarn test
 ```
+
+## License
+The Project is open-sourced project licensed under the [MIT license](http://opensource.org/licenses/MIT) 
