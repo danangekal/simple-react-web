@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://simple-web-react.herokuapp.com",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "connected-react-router": "^4.3.0",
     "cookie-parser": "^1.4.3",
     "forcedomain": "^1.0.0",
